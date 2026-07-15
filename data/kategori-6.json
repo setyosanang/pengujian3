@@ -1,0 +1,100 @@
+{
+  "id": "kategori-6",
+  "title": "Siapa Mengerjakan Apa Saat Sidang & Putusan? (Swimlane)",
+  "subtitle": "Swimlane Flowchart — alur sama seperti kategori Process, dikelompokkan menurut aktor: Pengawas Persidangan, Majelis, Terlapor, Saksi & PSDM, Sekretaris Majelis, dan Ketua Himpunan.",
+  "legalRef": "Tartib Persidangan Kategori A Pasal 12-21",
+  "startId": "start",
+  "nodes": {
+    "start": {
+      "type": "start",
+      "title": "MULAI: Sidang Kepengurusan Kategori A dibuka",
+      "description": "Sidang dibuka setelah Surat Tugas divalidasi; alur berikut menonjolkan siapa mengerjakan tiap langkah.",
+      "next": "n1"
+    },
+    "n1": {
+      "type": "process",
+      "title": "Serah terima berkas SIPETRA kepada Majelis",
+      "description": "Lane Pengawas Persidangan menyerahkan berkas SIPETRA yang telah lengkap kepada Majelis untuk diperiksa.",
+      "actor": "Pengawas Persidangan",
+      "legalRef": "Tartib Persidangan Pasal 10 ayat (2)",
+      "next": "n2"
+    },
+    "n2": {
+      "type": "process",
+      "title": "Verifikasi administrasi & pemanggilan Pihak Utama",
+      "description": "Lane Majelis memverifikasi kelengkapan administrasi lalu memanggil Pihak Utama ke ruang sidang.",
+      "actor": "Majelis (Ketua + Anggota Majelis)",
+      "next": "n3"
+    },
+    "n3": {
+      "type": "process",
+      "title": "Menghadiri sidang & memberi klarifikasi",
+      "description": "Lane Pihak Utama/Terlapor hadir dan memberikan klarifikasi atas pokok perkara yang dibacakan.",
+      "actor": "Pihak Utama / Terlapor",
+      "next": "n4"
+    },
+    "n4": {
+      "type": "process",
+      "title": "Menyampaikan hasil pengawasan & peninjauan",
+      "description": "Lane Saksi & PSDM/Peninjau menyampaikan hasil pengawasan administratif dan hasil peninjauan yang relevan dengan perkara.",
+      "actor": "Saksi & PSDM / Peninjau",
+      "next": "n5"
+    },
+    "n5": {
+      "type": "process",
+      "title": "Musyawarah awal Majelis → Putusan Sela",
+      "description": "Lane Majelis bermusyawarah tertutup dan menjatuhkan Putusan Sela: SIPETRA Dikabulkan atau Pemeriksaan Lanjutan.",
+      "actor": "Majelis",
+      "legalRef": "Tartib Persidangan Pasal 15",
+      "next": "n6"
+    },
+    "n6": {
+      "type": "process",
+      "title": "Status berubah jadi Terlapor, menyiapkan pembelaan",
+      "description": "Lane Pihak Utama/Terlapor: status berubah menjadi Terlapor begitu Putusan Sela menyatakan SIPETRA Dikabulkan, lalu menyiapkan pembelaan.",
+      "actor": "Terlapor",
+      "next": "n7"
+    },
+    "n7": {
+      "type": "process",
+      "title": "Pemeriksaan saksi (≥2 orang, sumpah supletoir)",
+      "description": "Lane Saksi & PSDM/Peninjau menjalani pemeriksaan sebagai bagian dari Tahap Pemeriksaan Etik.",
+      "actor": "Saksi & PSDM / Peninjau",
+      "next": "n8"
+    },
+    "n8": {
+      "type": "process",
+      "title": "Musyawarah akhir & pemungutan suara Majelis",
+      "description": "Lane Majelis menutup pemeriksaan dengan musyawarah akhir, dilanjutkan pemungutan suara tertutup bila mufakat tidak tercapai.",
+      "actor": "Majelis",
+      "next": "n9"
+    },
+    "n9": {
+      "type": "process",
+      "title": "Menyusun Berita Acara & minuta Putusan",
+      "description": "Lane Sekretaris Majelis mencatat seluruh jalannya sidang dan menyusun minuta Putusan sebagai dasar naskah resmi.",
+      "actor": "Sekretaris Majelis",
+      "next": "n10"
+    },
+    "n10": {
+      "type": "process",
+      "title": "Putusan Akhir dibacakan oleh Ketua Majelis",
+      "description": "Lane Majelis: Ketua Majelis membacakan Putusan Akhir secara lengkap dalam sidang tertutup.",
+      "actor": "Ketua Majelis",
+      "next": "n11"
+    },
+    "n11": {
+      "type": "process",
+      "title": "Menerbitkan SK & melaksanakan Putusan (≤3×24 jam)",
+      "description": "Lane Ketua Himpunan menerbitkan Surat Keputusan sebagai tindak lanjut administratif setelah Putusan berkekuatan hukum tetap.",
+      "actor": "Ketua Himpunan",
+      "legalRef": "Pedoman Teknis Bab VIII",
+      "next": "end1"
+    },
+    "end1": {
+      "type": "end",
+      "title": "SELESAI — publikasi Putusan setelah berkekuatan hukum tetap",
+      "description": "Estafet lintas-lane berakhir dengan publikasi resmi Putusan yang menjaga ketertiban administratif dan perlindungan para pihak."
+    }
+  }
+}

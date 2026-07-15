@@ -1,0 +1,107 @@
+/* KATEGORI 4 — Putusan: Process Flowchart
+   Sumber: flow-kategoriA/putusan/putusan-process.png
+   Silang-acu: Tartib Persidangan Kategori A Pasal 12-13, 15-16, 20-21 */
+window.KATEGORI_DATA = {
+  id: "kategori-4",
+  title: "Jalannya Sidang Kepengurusan Kategori A hingga Pelaksanaan Putusan",
+  subtitle: "Process Flowchart — jalur utama dari sidang dibuka sampai Putusan dilaksanakan dan dipublikasikan.",
+  legalRef: "Tartib Persidangan Kategori A Pasal 12–21",
+  startId: "start",
+  nodes: {
+    start: {
+      type: "start",
+      title: "MULAI: Sidang Kepengurusan Kategori A dibuka",
+      description: "Majelis resmi membuka Sidang Kepengurusan Kategori A berdasarkan Surat Tugas yang telah divalidasi.",
+      next: "n1"
+    },
+    n1: {
+      type: "process",
+      title: "Tahap Pemeriksaan SIPETRA",
+      description: "Meliputi validasi surat tugas, serah terima berkas SIPETRA dari Pengawas Persidangan, verifikasi administrasi, dan pemanggilan Pihak Utama.",
+      actor: "Majelis & Pengawas Persidangan",
+      legalRef: "Tartib Persidangan Pasal 12",
+      next: "n2"
+    },
+    n2: {
+      type: "process",
+      title: "Pembacaan pokok perkara & klarifikasi",
+      description: "Majelis membacakan pokok perkara, mendengar hasil pengawasan PSDM dan hasil peninjauan, lalu membuka ruang klarifikasi bila diperlukan.",
+      actor: "Majelis",
+      next: "n3"
+    },
+    n3: {
+      type: "process",
+      title: "Musyawarah awal Majelis",
+      description: "Ketua Majelis dan 2 Anggota Majelis bermusyawarah tertutup untuk menentukan arah Putusan Sela.",
+      actor: "Majelis (Ketua + 2 Anggota)",
+      legalRef: "Tartib Persidangan Pasal 6",
+      next: "n4"
+    },
+    n4: {
+      type: "process",
+      title: "Putusan Sela dijatuhkan",
+      description: "Majelis menjatuhkan Putusan Sela berupa SIPETRA Dikabulkan atau Pemeriksaan Lanjutan (lihat kategori 'Kemungkinan Putusan' untuk detail percabangannya).",
+      legalRef: "Tartib Persidangan Pasal 15",
+      next: "n5"
+    },
+    n5: {
+      type: "process",
+      title: "Tahap Pemeriksaan Etik",
+      description: "Status Pihak Utama berubah menjadi Terlapor; Terlapor diberi kesempatan menyiapkan pembelaan, dilanjutkan tahap pembuktian dan tanggapan Terlapor.",
+      actor: "Majelis & Terlapor",
+      legalRef: "Tartib Persidangan Pasal 13",
+      next: "n6"
+    },
+    n6: {
+      type: "process",
+      title: "Pemeriksaan saksi & verifikasi lanjutan",
+      description: "Minimal 2 orang saksi diperiksa dengan sumpah supletoir, dilanjutkan verifikasi lanjutan atas seluruh alat bukti.",
+      actor: "Majelis & Saksi",
+      legalRef: "Pedoman Teknis Bab II",
+      next: "n7"
+    },
+    n7: {
+      type: "process",
+      title: "Musyawarah akhir Majelis",
+      description: "Majelis bermusyawarah untuk mufakat; jika tidak tercapai, dilakukan pemungutan suara tertutup dengan satu suara per anggota Majelis.",
+      actor: "Majelis",
+      legalRef: "Pedoman Teknis Bab III",
+      next: "n8"
+    },
+    n8: {
+      type: "process",
+      title: "Putusan Akhir dibacakan",
+      description: "Ketua Majelis membacakan Putusan Akhir secara lengkap sesuai struktur Putusan dalam sidang tertutup yang dihadiri para pihak.",
+      actor: "Ketua Majelis",
+      legalRef: "Tartib Persidangan Pasal 17 & Pedoman Teknis Bab IX",
+      next: "n9"
+    },
+    n9: {
+      type: "process",
+      title: "Tenggang waktu upaya hukum",
+      description: "Para pihak memiliki waktu 3×24 jam sejak Putusan disahkan untuk mengajukan Banding atau Inspeksi Yudisial melalui Pengawas Persidangan.",
+      legalRef: "Tartib Persidangan Pasal 21 & 22",
+      next: "n10"
+    },
+    n10: {
+      type: "process",
+      title: "Putusan memperoleh Kekuatan Hukum Organisasi Tetap",
+      description: "Setelah tenggang waktu upaya hukum terlampaui tanpa pengajuan, atau setelah upaya hukum diputus, Putusan berkekuatan hukum tetap.",
+      legalRef: "Tartib Persidangan Pasal 20",
+      next: "n11"
+    },
+    n11: {
+      type: "process",
+      title: "Ketua Himpunan menerbitkan Surat Keputusan & melaksanakan Putusan",
+      description: "Surat Keputusan Ketua Himpunan diterbitkan paling lama 3×24 jam sejak Putusan berkekuatan hukum tetap, lalu dilaksanakan secara administratif.",
+      actor: "Ketua Himpunan",
+      legalRef: "Pedoman Teknis Bab VIII",
+      next: "end1"
+    },
+    end1: {
+      type: "end",
+      title: "SELESAI (publikasi Putusan setelah berkekuatan hukum tetap)",
+      description: "Dokumen Publikasi diterbitkan untuk kepentingan umum dengan menjaga ketertiban administratif dan perlindungan para pihak."
+    }
+  }
+};

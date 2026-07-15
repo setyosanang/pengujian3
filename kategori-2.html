@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kategori 2 — Gerbang Keputusan Sidang (Decision) | HIMAGRIND-PNC</title>
+<link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <div class="brand">
+        <div class="brand-emblem">⚖️</div>
+        <div class="brand-text">
+          <span>HIMAGRIND-PNC</span>
+          <small>Sidang Kepengurusan Kategori A</small>
+        </div>
+      </div>
+      <div class="nav-links">
+        <a href="index.html">← Semua Kategori</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="game-header">
+    <div class="container">
+      <div class="crumbs"><a href="index.html">Beranda</a> / Kategori 2</div>
+      <h1 id="pageTitle">Memuat...</h1>
+      <p class="cat-sub" id="pageSubtitle"></p>
+      <div class="meta-row">
+        <span class="meta-pill" id="pageLegal"></span>
+      </div>
+    </div>
+  </header>
+
+  <section class="container game-wrap">
+    <div class="flowchart-panel">
+
+      <div class="progress-strip">
+        <div class="progress-bar-outer"><div class="progress-bar-inner" id="progressInner"></div></div>
+        <span class="progress-text"><span id="progressStep">0 langkah</span> · <span id="progressPct">0%</span></span>
+      </div>
+
+      <div class="start-screen" id="startScreen">
+        <div class="emoji">🌱</div>
+        <h2>Siap menelusuri alurnya?</h2>
+        <p>Klik tombol di bawah untuk memulai. Setiap node bisa diklik untuk melihat penjelasan lengkap di panel kanan.</p>
+        <button class="btn btn-primary" id="startBtn">Mulai ▶</button>
+      </div>
+
+      <div class="flowchart-area" id="flowchartArea" style="display:none;"></div>
+
+      <div class="controls-row" id="controlsRow" style="display:none;">
+        <div class="left-group">
+          <button class="btn btn-quiet" id="backBtn">⟲ Kembali</button>
+          <button class="btn btn-quiet" id="restartBtn">↺ Ulangi</button>
+        </div>
+        <div class="right-group">
+          <a class="btn btn-secondary" href="index.html">Menu Utama</a>
+          <a class="btn btn-primary" href="kategori-3.html">Kategori 3 ➜</a>
+        </div>
+      </div>
+    </div>
+
+    <aside class="info-panel">
+      <div class="panel-label">Panel Keterangan Node</div>
+      <div id="infoPanel">
+        <div class="info-empty">Klik "Mulai" lalu pilih / klik node pada flowchart untuk melihat keterangan lengkap di sini. 🌿</div>
+      </div>
+    </aside>
+  </section>
+
+  <footer class="site-footer">
+    © <span data-year></span> HIMAGRIND-PNC — Dibuat untuk kebutuhan edukasi internal organisasi.
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/kategori-2.js"></script>
+  <script src="assets/js/flowchart-core.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var data = window.KATEGORI_DATA;
+      document.getElementById("pageTitle").textContent = data.title;
+      document.getElementById("pageSubtitle").textContent = data.subtitle || "";
+      document.getElementById("pageLegal").textContent = "📖 " + (data.legalRef || "");
+      document.title = data.title + " | HIMAGRIND-PNC";
+
+      var els = {
+        startScreen: document.getElementById("startScreen"),
+        flowchartArea: document.getElementById("flowchartArea"),
+        controlsRow: document.getElementById("controlsRow"),
+        infoPanel: document.getElementById("infoPanel"),
+        startBtn: document.getElementById("startBtn"),
+        restartBtn: document.getElementById("restartBtn"),
+        backBtn: document.getElementById("backBtn"),
+        progressInner: document.getElementById("progressInner"),
+        progressStep: document.getElementById("progressStep"),
+        progressPct: document.getElementById("progressPct")
+      };
+      new window.FlowchartGame(data, els);
+    });
+  </script>
+</body>
+</html>

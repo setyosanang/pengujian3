@@ -1,0 +1,98 @@
+{
+  "id": "kategori-3",
+  "title": "Siapa Mengerjakan Apa? Administrasi SIPETRA (Swimlane)",
+  "subtitle": "Swimlane Flowchart — alur sama seperti kategori Process, namun tiap node menonjolkan aktor/lane penanggung jawab.",
+  "legalRef": "Pedoman Teknis Pasal 27 ayat (5) & Persus SIPETRA Pasal 29",
+  "startId": "start",
+  "nodes": {
+    "start": {
+      "type": "start",
+      "title": "MULAI",
+      "description": "Alur administrasi SIPETRA dilihat dari sisi pembagian kerja antar-lane/aktor organisasi.",
+      "next": "n1"
+    },
+    "n1": {
+      "type": "process",
+      "title": "Mengajukan SIPETRA (penuhi syarat Ps.29)",
+      "description": "Lane Pelapor: mengisi dan mengajukan dokumen SIPETRA lengkap dengan data diri, saksi, dan bukti.",
+      "actor": "Pelapor",
+      "legalRef": "Persus SIPETRA Pasal 29",
+      "next": "n2"
+    },
+    "n2": {
+      "type": "process",
+      "title": "Menerima & menyeleksi dokumen SIPETRA",
+      "description": "Lane Bidang Peraturan Organisasi (Div. Kebijakan Publik): memeriksa kelengkapan administratif dokumen yang masuk.",
+      "actor": "Bidang Peraturan Organisasi (Div. Kebijakan Publik)",
+      "next": "n3"
+    },
+    "n3": {
+      "type": "process",
+      "title": "Melakukan kajian atas SIPETRA",
+      "description": "Lane Divisi Kebijakan Publik: mengkaji substansi dokumen yang telah lolos seleksi administratif.",
+      "actor": "Divisi Kebijakan Publik",
+      "next": "n4"
+    },
+    "n4": {
+      "type": "process",
+      "title": "Menyatakan SIPETRA absah & berkaitan dengan Sidang Kepengurusan",
+      "description": "Lane Divisi Kebijakan Publik: menetapkan keabsahan dan relevansi dokumen terhadap kebutuhan Sidang Kepengurusan.",
+      "actor": "Divisi Kebijakan Publik",
+      "next": "n5"
+    },
+    "n5": {
+      "type": "process",
+      "title": "Menggelar rapat khusus dengan pihak terkait",
+      "description": "Lane Rapat Khusus: Ketua HIMAGRIND-PNC, Divisi Kebijakan Publik, dan Divisi PSDM berkumpul menimbang perkara.",
+      "actor": "Rapat Khusus (Ketua Himpunan + Div. Kebijakan Publik + Div. PSDM)",
+      "next": "d1"
+    },
+    "d1": {
+      "type": "decision",
+      "title": "Terbukti melanggar P2/P3?",
+      "description": "Lane Rapat Khusus memutuskan status pelanggaran sebagai dasar apakah perkara berlanjut ke Sidang Kepengurusan.",
+      "actor": "Rapat Khusus",
+      "choices": [
+        {
+          "label": "Tidak",
+          "next": "n6"
+        },
+        {
+          "label": "Ya",
+          "next": "n7"
+        }
+      ]
+    },
+    "n6": {
+      "type": "process",
+      "title": "Menerima limpahan perkara",
+      "description": "Lane Divisi PSDM: menerima perkara yang bukan pelanggaran P2/P3 untuk ditindaklanjuti dengan sanksi P1.",
+      "actor": "Divisi PSDM",
+      "next": "end1"
+    },
+    "end1": {
+      "type": "end",
+      "title": "SELESAI (bukan Sidang Kepengurusan)",
+      "description": "Alur kerja lintas-lane berhenti; perkara ditangani di ranah pembinaan Divisi PSDM, bukan persidangan."
+    },
+    "n7": {
+      "type": "process",
+      "title": "Menetapkan perkara & kategori Sidang Kepengurusan (Kat. A)",
+      "description": "Lane Divisi Kebijakan Publik menetapkan status perkara sebagai Sidang Kepengurusan Kategori A.",
+      "actor": "Divisi Kebijakan Publik",
+      "next": "n8"
+    },
+    "n8": {
+      "type": "process",
+      "title": "Sidang Kepengurusan Kategori A dimulai",
+      "description": "Lane Majelis mengambil alih proses selanjutnya begitu sidang resmi dibuka.",
+      "actor": "Majelis",
+      "next": "end2"
+    },
+    "end2": {
+      "type": "end",
+      "title": "LANJUT KE TAHAP PUTUSAN",
+      "description": "Tongkat estafet berpindah dari lane administrasi ke lane Majelis pada kategori 'Putusan'."
+    }
+  }
+}
